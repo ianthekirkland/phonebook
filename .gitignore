@@ -1,0 +1,16 @@
+/node_modules
+#
+# Removed per https://www.youtube.com/watch?v=pBB_zVNIoTI&list=PLe30vg_FG4OSl8zlikYc_RLkfueqAMUb_&index=3
+#
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /vendor
+# /.idea
+# /.vscode
+# /.vagrant
+# Homestead.json
+# Homestead.yaml
+# npm-debug.log
+# yarn-error.log
+# .env
