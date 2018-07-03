@@ -11,6 +11,27 @@
 |
 */
 
+/**
+ * Root view
+ */ 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); // changed from 'welcome' to 'phonebook' to 'welcome'
 });
+
+/**
+ * Phonebook route
+ */ 
+Route::get('/phonebook/{name}', function() {
+        return redirect('/');
+    }
+)->where('name', '[A-Za-z0-9_-]+');
+
+/**
+ * Phonebook database route
+ */
+Route::resource('phonebook', 'PhonebookController');
+
+/**
+ * getData route; Calls PhonebookController's getData() method.
+ */
+Route::post('getData', 'PhonebookController@getData');

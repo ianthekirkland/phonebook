@@ -79,6 +79,7 @@ class ComposerStaticInite4adb697da6763436aaab93434980ee0
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'LVR\\Phone\\' => 10,
         ),
         'I' => 
         array (
@@ -234,6 +235,10 @@ class ComposerStaticInite4adb697da6763436aaab93434980ee0
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'LVR\\Phone\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel-validation-rules/phone/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -327,12 +332,15 @@ class ComposerStaticInite4adb697da6763436aaab93434980ee0
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\PhonebookController' => __DIR__ . '/../..' . '/app/Http/Controllers/PhonebookController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\PhonebookRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PhonebookRequest.php',
+        'App\\Phonebook' => __DIR__ . '/../..' . '/app/Phonebook.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1747,6 +1755,10 @@ class ComposerStaticInite4adb697da6763436aaab93434980ee0
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'LVR\\Phone\\Digits' => __DIR__ . '/..' . '/laravel-validation-rules/phone/src/Digits.php',
+        'LVR\\Phone\\E164' => __DIR__ . '/..' . '/laravel-validation-rules/phone/src/E164.php',
+        'LVR\\Phone\\NANP' => __DIR__ . '/..' . '/laravel-validation-rules/phone/src/NANP.php',
+        'LVR\\Phone\\Phone' => __DIR__ . '/..' . '/laravel-validation-rules/phone/src/Phone.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

@@ -22,8 +22,38 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import VueShortkey from 'vue-shortkey';
+
+Vue.use(VueRouter);
+Vue.use(VueShortkey);
+
+
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+let Myheader = require('./components/Myheader.vue');
+let Myfooter = require('./components/Myfooter.vue');
+let Home = require('./components/Home.vue');
+let About = require('./components/About.vue');
+let Add = require('./components/Add.vue');
+
+// routes
+const routes = [
+    { path: '/home', component: Home },
+    { path: '/about', component: About }
+];
+
+// router
+const router = new VueRouter({
+    // mode: 'history', // Eliminates URL '#' (?) and attempts to refresh same route
+    routes // short for `routes: routes`
+});
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
+    created() {
+        console.log('This is a creation lifecyle hook');
+    },
+    components: { Myheader, Myfooter, Add } // Shouldn't this include 'Home.vue'? Probably not, since Home is bound to a route
 });

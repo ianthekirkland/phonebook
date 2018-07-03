@@ -4113,5 +4113,56 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "laravel-validation-rules/phone",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel-validation-rules/phone.git",
+            "reference": "d1eeada974822240a3d5b95c97a99c0367d914e3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel-validation-rules/phone/zipball/d1eeada974822240a3d5b95c97a99c0367d914e3",
+            "reference": "d1eeada974822240a3d5b95c97a99c0367d914e3",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "^5.5",
+            "illuminate/validation": "^5.5",
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "orchestra/testbench": "^3.2",
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-09-12T02:50:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LVR\\Phone\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tyler Arbon",
+                "email": "tylercd100@gmail.com"
+            }
+        ],
+        "description": "Validate that a phone number is in the correct format",
+        "homepage": "https://github.com/laravel-validation-rules/us-phone",
+        "keywords": [
+            "laravel",
+            "phone",
+            "tylercd100",
+            "validator"
+        ]
     }
 ]

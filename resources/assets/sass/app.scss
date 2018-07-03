@@ -1,9 +1,17 @@
-
-// Fonts
+/**
+ * Font Styles
+ */
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
+/**
+ * Variable Styles
+ */
 @import "variables";
+
+/**
+ * Font-Awesome
+ */
+@import "~font-awesome/scss/font-awesome";
 
 /** 
  * Bulma
@@ -14,6 +22,9 @@
  */
 @import '~bulma/bulma';
 
+/**
+ * Default Laravel Styles
+ */
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

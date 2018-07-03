@@ -1,0 +1,16 @@
+/**
+ * Custom Styles
+ */
+.footer-fixed {
+    min-height: calc(100vh - 140px);
+    margin-top: 10vh;
+}
+
+.container-min {
+    min-height: 50vh;
+}
+
+.buffer-bottom {
+    margin-bottom: 10vh;
+    // min-height: calc(calc((100vh - 100px) * .50) + 140px);
+}
