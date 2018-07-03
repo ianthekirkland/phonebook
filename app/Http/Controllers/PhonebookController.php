@@ -160,7 +160,7 @@ class PhonebookController extends Controller
      */
     public function update(Request $request, Phonebook $phonebook)
     {
-        //
+        return $request->all();
     }
 
     /**
