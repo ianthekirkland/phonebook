@@ -46377,7 +46377,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "/* Fixes icon-text alignment */\n.fa[data-v-6707e3d4] {\n  position: relative;\n  top: -0.4em;\n}\n\n/* Font-Awesome's 'Edit' Icon sits a bit too high */\n.fa-edit[data-v-6707e3d4] {\n  top: -0.3em;\n}\n.fa-search[data-v-6707e3d4] {\n  position: absolute;\n  top: 0.6em;\n}\n.raise[data-v-6707e3d4] {\n  position: relative;\n  top: -0.25em;\n}\n.lower[data-v-6707e3d4] {\n  position: relative;\n  top: 0.25em;\n}\n.pad-right[data-v-6707e3d4] {\n  padding-right: 0.5em;\n}\n.pad-left[data-v-6707e3d4] {\n  padding-left: 0.5em;\n}\n", ""]);
+exports.push([module.i, "/* Fixes icon-text alignment */\n.fa[data-v-6707e3d4] {\n  position: relative;\n  top: -0.4em;\n}\n\n/* Font-Awesome's 'Edit' Icon sits a bit too high */\n.fa-edit[data-v-6707e3d4] {\n  top: -0.3em;\n}\n.fa-search[data-v-6707e3d4] {\n  position: absolute;\n  top: 0.6em;\n}\n.raise[data-v-6707e3d4] {\n  position: relative;\n  top: -0.25em;\n}\n.lower[data-v-6707e3d4] {\n  position: relative;\n  top: 0.25em;\n}\n.pad-right[data-v-6707e3d4] {\n  padding-right: 0.5em;\n}\n.pad-left[data-v-6707e3d4] {\n  padding-left: 0.5em;\n}\n.fa-spinner[data-v-6707e3d4] {\n  position: relative;\n  top: 0.3em;\n}\n", ""]);
 
 // exports
 
@@ -46785,6 +46785,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 // Import the Add component.
 var Add = __webpack_require__(11);
@@ -46816,6 +46821,22 @@ var Update = __webpack_require__(73);
         },
         closeUpdate: function closeUpdate() {
             this.updateActive = '';
+        },
+        deleteItem: function deleteItem(key, id) {
+            var _this = this;
+
+            console.log(key + ' ' + id);
+            if (confirm("Are you sure you want to delete this contact?")) {
+                this.loading = !this.loading; // toggle (on)
+                axios.delete('/phonebook/' + id)
+                // .then((response) => console.log('deleted'))
+                .then(function (response) {
+                    _this.lists.splice(key, 1);
+                    _this.loading = !_this.loading; // toggle (off)
+                }).catch(function (error) {
+                    return _this.errors = error.response.data.errors;
+                });
+            }
         }
     },
     data: function data() {
@@ -46826,6 +46847,7 @@ var Update = __webpack_require__(73);
             addActive: '',
             showActive: '',
             updateActive: '',
+            loading: false,
             lists: {},
             errors: {}
         };
@@ -46833,15 +46855,15 @@ var Update = __webpack_require__(73);
     mounted: function mounted() {
         // I added this function like this rather how the tut did it; See the docs for more info.
         this.$nextTick(function () {
-            var _this = this;
+            var _this2 = this;
 
             // Code that will run only after the entire view has been rendered
             console.log('This is a mounted lifecyle hook');
             // AJAX request.
             axios.post('/getData').then(function (response) {
-                return _this.lists = response.data;
+                return _this2.lists = response.data;
             }).catch(function (error) {
-                return _this.errors = error.response.data.errors;
+                return _this2.errors = error.response.data.errors;
             });
         });
     }
@@ -47364,7 +47386,13 @@ var render = function() {
                     "\n            "
                 )
               ]
-            )
+            ),
+            _vm._v(" "),
+            _vm.loading
+              ? _c("span", { staticClass: "is-pulled-right" }, [
+                  _c("i", { staticClass: "fa fa-spinner fa-spin fa-1x" })
+                ])
+              : _vm._e()
           ]),
           _vm._v(" "),
           _vm._m(0),
@@ -47377,7 +47405,17 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm._m(1, true),
+              _c("span", { staticClass: "panel-icon column is-1" }, [
+                _c("i", {
+                  staticClass: "has-text-grey fa fa-trash",
+                  attrs: { "aria-hidden": "true" },
+                  on: {
+                    click: function($event) {
+                      _vm.deleteItem(key, item.id)
+                    }
+                  }
+                })
+              ]),
               _vm._v(" "),
               _c("span", { staticClass: "panel-icon column is-1" }, [
                 _c("i", {
@@ -47445,17 +47483,6 @@ var staticRenderFns = [
           })
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "panel-icon column is-1" }, [
-      _c("i", {
-        staticClass: "has-text-grey fa fa-trash",
-        attrs: { "aria-hidden": "true" }
-      })
     ])
   }
 ]

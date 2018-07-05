@@ -10,6 +10,11 @@
                 <button class="button is-primary is-outlined" @click="openAdd">
                     {{ buttonName }}
                 </button>
+
+                <span class="is-pulled-right" v-if="loading">
+                    <i class="fa fa-spinner fa-spin fa-1x"></i>
+                </span>
+
             </p>
             
             <div class="panel-block">
@@ -28,7 +33,7 @@
                 </span>
                 
                 <span class="panel-icon column is-1">
-                    <i class="has-text-grey fa fa-trash" aria-hidden="true"></i>
+                    <i class="has-text-grey fa fa-trash" aria-hidden="true" @click="deleteItem(key, item.id)"></i>
                 </span>
             
                 <span class="panel-icon column is-1">
@@ -83,6 +88,19 @@
             },
             closeUpdate() {
                 this.updateActive = '';
+            },
+            deleteItem(key, id) {
+                console.log(`${key} ${id}`);
+                if (confirm("Are you sure you want to delete this contact?")) {
+                    this.loading = !this.loading; // toggle (on)
+                    axios.delete(`/phonebook/${id}`)
+                        // .then((response) => console.log('deleted'))
+                        .then((response) => {
+                            this.lists.splice(key, 1);
+                            this.loading = !this.loading; // toggle (off)
+                        })
+                        .catch((error) => this.errors = error.response.data.errors);
+                }
             }
         },
         data: function () {
@@ -93,6 +111,7 @@
                 addActive: '',
                 showActive: '',
                 updateActive: '',
+                loading: false,
                 lists: {},
                 errors: {}
             }
@@ -147,6 +166,10 @@
     }
     .pad-left {
         padding-left: 0.5em;
+    }
+    .fa-spinner {
+        position: relative;
+        top: 0.3em;
     }
 
 </style>
